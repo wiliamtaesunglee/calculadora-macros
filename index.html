@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Protocol Mass</title>
+</head>
+<body>
+    <div class="user-data">
+        <p class="user-data-title">Protocol Mass:</p>
+        <p class="user-data-subtitle">Calculadora de Macros</p>
+
+        <p class="user-data-text">Em qual semana do <br> Procol Mass você está?</p>
+        <div class="user-data-week">
+            <select class="user-data-box" id="user-data-week" onchange="userData() ">
+                <option class="user-data-box-option" value="0"></option>
+                <option class="user-data-box-option" value="1">Semana 1</option>
+                <option class="user-data-box-option" value="2">Semana 2</option>
+                <option class="user-data-box-option" value="3">Semana 3</option>
+                <option class="user-data-box-option" value="4">Semana 4</option>
+                <option class="user-data-box-option" value="5">Semana 5</option>
+                <option class="user-data-box-option" value="6">Semana 6</option>
+                <option class="user-data-box-option" value="7">Semana 7</option>
+                <option class="user-data-box-option" value="8">Semana 8</option>
+                <option class="user-data-box-option" value="9">Semana 9</option>
+                <option class="user-data-box-option" value="10">Semana 10</option>
+                <option class="user-data-box-option" value="11">Semana 11</option>
+                <option class="user-data-box-option" value="12">Semana 12</option>
+            </select>
+        </div>
+
+        
+        <div class="user-data-input">
+            <div class="user-data-input-weight">
+                <div class="user-data-input-weight-group">
+                    <label class="user-data-input-weight-group-label" for="Range">
+                            <p class="user-data-input-weight-group-label">Peso</p>
+                        </label>
+                        <div class="user-data-input-weight-group-box">
+                            <!-- <p class="user-data-input-weight-group-box-input">80</p>
+                             -->
+                             <input onchange="userData()" class="user-data-input-weight-group-box-input" id="weight-data" type="number" name="hight">
+                            <p class="user-data-input-weight-group-box-text"> kg</p>
+                        </div>
+                </div>
+                
+                <!-- <input class="user-data-input-weight-range" type="Range" id="Range" min="40" max="180"> -->
+            </div>
+
+            <div class="user-data-input-weight">
+                    <div class="user-data-input-weight-group">
+                        <label class="user-data-input-weight-group-label" for="Range">
+                                <p class="user-data-input-weight-group-label">Altura</p>
+                            </label>
+                            <div class="user-data-input-weight-group-box">
+                                <!-- <p class="user-data-input-weight-group-box-input">175</p> -->
+                                <input onchange="userData()" class="user-data-input-weight-group-box-input" id = "hight-data" type="number" name="hight">
+                                <p class="user-data-input-weight-group-box-text"> cm</p>
+                            </div>
+                    </div>
+                    
+                    <!-- <input class="user-data-input-weight-range" type="Range" id="Range" min="120" max="230"> -->
+                </div>
+
+                <div class="user-data-input-weight">
+                        <div class="user-data-input-weight-group">
+                            <label class="user-data-input-weight-group-label" for="Range">
+                                    <p class="user-data-input-weight-group-label">Idade</p>
+                                </label>
+                                <div class="user-data-input-weight-group-box">
+                                        <!-- <p class="user-data-input-weight-group-box-input">40</p> -->
+                                        <input onchange="userData()" class="user-data-input-weight-group-box-input" id="age-data" type="number" name="hight">
+                                    <!-- <p class="user-data-input-weight-group-box-text">anos</p> -->
+                                </div>
+                        </div>
+                        
+                        <!-- <input class="user-data-input-weight-range" type="Range" id="Range" min="15" max="80"> -->
+                    </div>
+        </div>
+        
+        <p class="body-tipe-text">Tipo Físico</p>
+        <div>
+            <ul class="body-tipe">
+                <li class="body-tipe-ectomorfo">
+                    
+                    <img src="img/ecto.png">
+                    <button>
+                        <label>
+                            <input onchange="userData()" id="ectomorfo" type="radio" checked="checked" name="bodytype" value="ectomorfo">
+                        Ectomorfo
+                        </label>
+                    </button>
+                </li>
+
+                <li class="body-tipe-mesomorfo">
+                    <img src="img/meso.png">
+                    
+                    <button>
+                        <label>
+                            <input onchange="userData()" id="mesomorfo" type="radio" checked="checked" name="bodytype" value="mesomorfo">
+                            Mesomorfo
+                        </label>
+                    </button>
+                </li>
+
+
+                <li class="body-tipe-endomorfo">
+                    <img src="img/endo.png">
+                    <!-- <input type="radio" checked="checked" name="radio"> -->
+                    <button>
+                        <label>
+                            <input onchange="userData()" id="endomorfo" type="radio" checked="checked" name="bodytype" value="endomorfo">
+                            Endomorfo
+                        </label>
+                    </button>
+                </li>
+            </ul>
+
+            <div>
+                <button class="user-data-submit" onclick="activeCalc()">Calcular macronutrientes</button>
+    
+            </div>   
+        </div>
+        
+                 
+    </div>
+
+    
+    <div class="user-data-result inactive">
+        <p class="user-data-title">Protocol Mass:</p>
+        <p class="user-data-subtitle">Calculadora de Macros</p>
+        <p class="user-data-text">Confira os resultados da <br> distribuição dos seus macros</p>
+
+        <ul class="user-data-result semana-1 inactive">
+            <p class="semana-1">Semana 1</p>
+            <li class="user-data-result-carb">
+                <p class="user-data-result-carb-txt">Carboidratos</p>
+                <p class="user-data-result-carb-value" id="semana-1-carb"></p>
+            </li>
+
+            <li class="user-data-result-protein">
+                <p class="user-data-result-protein-txt">Proteína</p>
+                <p class="user-data-result-protein-value" id="semana-1-prot"></p>
+            </li>
+
+            <li class="user-data-result-fat">
+                <p class="user-data-result-fat-txt">Gordura</p>
+                <p class="user-data-result-fat-value" id="semana-1-fat"></p>
+            </li>
+
+            <li class="user-data-result-tot">
+                <p class="user-data-result-tot">Total de calorias</p>
+                <p class="user-data-result-tot-value" id="semana-1-kcal"></p>
+            </li>
+
+        </ul>
+
+        <ul class="user-data-result semana-2 inactive">
+            <p class="semana-1  ">Semana 2</p>
+            <li class="user-data-result-carb">
+                <p class="user-data-result-carb-txt">Carboidratos</p>
+                <p class="user-data-result-carb-value" id="semana-2-carb"></p>
+            </li>
+
+            <li class="user-data-result-protein">
+                <p class="user-data-result-protein-txt">Proteína</p>
+                <p class="user-data-result-protein-value" id="semana-2-prot"></p>
+            </li>
+
+            <li class="user-data-result-fat">
+                <p class="user-data-result-fat-txt">Gordura</p>
+                <p class="user-data-result-fat-value" id="semana-2-fat"></p>
+            </li>
+
+            <li class="user-data-result-tot">
+                <p class="user-data-result-tot">Total de calorias</p>
+                <p class="user-data-result-tot-value" id="semana-2-kcal"></p>
+            </li>
+    
+        </ul>
+
+        <ul class="user-data-result semana-3 inactive">
+            <p class="semana-1  ">Semana 3</p>
+            <li class="user-data-result-carb">
+                <p class="user-data-result-carb-txt">Carboidratos</p>
+                <p class="user-data-result-carb-value" id="semana-3-carb"></p>
+            </li>
+
+            <li class="user-data-result-protein">
+                <p class="user-data-result-protein-txt">Proteína</p>
+                <p class="user-data-result-protein-value" id="semana-3-prot"></p>
+            </li>
+
+            <li class="user-data-result-fat">
+                <p class="user-data-result-fat-txt">Gordura</p>
+                <p class="user-data-result-fat-value" id="semana-3-fat"></p>
+            </li>
+
+            <li class="user-data-result-tot">
+                <p class="user-data-result-tot">Total de calorias</p>
+                <p class="user-data-result-tot-value" id="semana-3-kcal"></p>
+            </li>
+
+        </ul>
+
+        <ul class="user-data-result semana-4 inactive">
+            <p class="semana-1  ">Semana 4</p>
+            <li class="user-data-result-carb">
+                <p class="user-data-result-carb-txt">Carboidratos</p>
+                <p class="user-data-result-carb-value" id="semana-4-carb"></p>
+            </li>
+
+            <li class="user-data-result-protein">
+                <p class="user-data-result-protein-txt">Proteína</p>
+                <p class="user-data-result-protein-value" id="semana-4-prot"></p>
+            </li>
+
+            <li class="user-data-result-fat">
+                <p class="user-data-result-fat-txt">Gordura</p>
+                <p class="user-data-result-fat-value" id="semana-4-fat"></p>
+            </li>
+
+            <li class="user-data-result-tot">
+                <p class="user-data-result-tot">Total de calorias</p>
+                <p class="user-data-result-tot-value" id="semana-4-kcal"></p>
+            </li>
+
+        </ul>
+
+        <ul class="user-data-result semana-5 inactive">
+            <p class="semana-1  ">Semana 5</p>
+            <li class="user-data-result-carb">
+                <p class="user-data-result-carb-txt">Carboidratos</p>
+                <p class="user-data-result-carb-value" id="semana-5-carb"></p>
+            </li>
+
+            <li class="user-data-result-protein">
+                <p class="user-data-result-protein-txt">Proteína</p>
+                <p class="user-data-result-protein-value" id="semana-5-prot"></p>
+            </li>
+
+            <li class="user-data-result-fat">
+                <p class="user-data-result-fat-txt">Gordura</p>
+                <p class="user-data-result-fat-value" id="semana-5-fat"></p>
+            </li>
+
+            <li class="user-data-result-tot">
+                <p class="user-data-result-tot">Total de calorias</p>
+                <p class="user-data-result-tot-value" id="semana-5-kcal"></p>
+            </li>
+
+        </ul>
+
+        <ul class="user-data-result semana-6 inactive">
+            <p class="semana-1  ">Semana 6</p>
+            <li class="user-data-result-carb">
+                <p class="user-data-result-carb-txt">Carboidratos</p>
+                <p class="user-data-result-carb-value" id="semana-6-carb"></p>
+            </li>
+
+            <li class="user-data-result-protein">
+                <p class="user-data-result-protein-txt">Proteína</p>
+                <p class="user-data-result-protein-value" id="semana-6-prot"></p>
+            </li>
+
+            <li class="user-data-result-fat">
+                <p class="user-data-result-fat-txt">Gordura</p>
+                <p class="user-data-result-fat-value" id="semana-6-fat"></p>
+            </li>
+
+            <li class="user-data-result-tot">
+                <p class="user-data-result-tot">Total de calorias</p>
+                <p class="user-data-result-tot-value" id="semana-6-kcal"></p>
+            </li>
+
+        </ul>
+
+        <ul class="user-data-result semana-7 inactive">
+            <p class="semana-1  ">Semana 7</p>
+            <li class="user-data-result-carb">
+                <p class="user-data-result-carb-txt">Carboidratos</p>
+                <p class="user-data-result-carb-value" id="semana-7-carb"></p>
+            </li>
+
+            <li class="user-data-result-protein">
+                <p class="user-data-result-protein-txt">Proteína</p>
+                <p class="user-data-result-protein-value" id="semana-7-prot"></p>
+            </li>
+
+            <li class="user-data-result-fat">
+                <p class="user-data-result-fat-txt">Gordura</p>
+                <p class="user-data-result-fat-value" id="semana-7-fat"></p>
+            </li>
+
+            <li class="user-data-result-tot">
+                <p class="user-data-result-tot">Total de calorias</p>
+                <p class="user-data-result-tot-value" id="semana-7-kcal"></p>
+            </li>
+
+        </ul>
+
+        <ul class="user-data-result semana-8 inactive">
+            <p class="semana-1  ">Semana 8</p>
+            <li class="user-data-result-carb">
+                <p class="user-data-result-carb-txt">Carboidratos</p>
+                <p class="user-data-result-carb-value" id="semana-8-carb"></p>
+            </li>
+
+            <li class="user-data-result-protein">
+                <p class="user-data-result-protein-txt">Proteína</p>
+                <p class="user-data-result-protein-value" id="semana-8-prot"></p>
+            </li>
+
+            <li class="user-data-result-fat">
+                <p class="user-data-result-fat-txt">Gordura</p>
+                <p class="user-data-result-fat-value" id="semana-8-fat"></p>
+            </li>
+
+            <li class="user-data-result-tot">
+                <p class="user-data-result-tot">Total de calorias</p>
+                <p class="user-data-result-tot-value" id="semana-8-kcal"></p>
+            </li>
+
+        </ul>
+
+        <ul class="user-data-result semana-9 inactive">
+            <p class="semana-1  ">Semana 9</p>
+            <li class="user-data-result-carb">
+                <p class="user-data-result-carb-txt">Carboidratos</p>
+                <p class="user-data-result-carb-value" id="semana-9-carb"></p>
+            </li>
+
+            <li class="user-data-result-protein">
+                <p class="user-data-result-protein-txt">Proteína</p>
+                <p class="user-data-result-protein-value" id="semana-9-prot"></p>
+            </li>
+
+            <li class="user-data-result-fat">
+                <p class="user-data-result-fat-txt">Gordura</p>
+                <p class="user-data-result-fat-value" id="semana-9-fat"></p>
+            </li>
+
+            <li class="user-data-result-tot">
+                <p class="user-data-result-tot">Total de calorias</p>
+                <p class="user-data-result-tot-value" id="semana-9-kcal"></p>
+            </li>
+
+        </ul>
+
+        <ul class="user-data-result semana-10 inactive">
+            <p class="semana-1  ">Semana 10</p>
+            <li class="user-data-result-carb">
+                <p class="user-data-result-carb-txt">Carboidratos</p>
+                <p class="user-data-result-carb-value" id="semana-10-carb"></p>
+            </li>
+
+            <li class="user-data-result-protein">
+                <p class="user-data-result-protein-txt">Proteína</p>
+                <p class="user-data-result-protein-value" id="semana-10-prot"></p>
+            </li>
+
+            <li class="user-data-result-fat">
+                <p class="user-data-result-fat-txt">Gordura</p>
+                <p class="user-data-result-fat-value" id="semana-10-fat"></p>
+            </li>
+
+            <li class="user-data-result-tot">
+                <p class="user-data-result-tot">Total de calorias</p>
+                <p class="user-data-result-tot-value" id="semana-10-kcal"></p>
+            </li>
+
+        </ul>
+
+        <ul class="user-data-result semana-11 inactive">
+            <p class="semana-1  ">Semana 11</p>
+            <li class="user-data-result-carb">
+                <p class="user-data-result-carb-txt">Carboidratos</p>
+                <p class="user-data-result-carb-value" id="semana-11-carb"></p>
+            </li>
+
+            <li class="user-data-result-protein">
+                <p class="user-data-result-protein-txt">Proteína</p>
+                <p class="user-data-result-protein-value" id="semana-11-prot"></p>
+            </li>
+
+            <li class="user-data-result-fat">
+                <p class="user-data-result-fat-txt">Gordura</p>
+                <p class="user-data-result-fat-value" id="semana-11-fat"></p>
+            </li>
+
+            <li class="user-data-result-tot">
+                <p class="user-data-result-tot">Total de calorias</p>
+                <p class="user-data-result-tot-value" id="semana-11-kcal"></p>
+            </li>
+
+        </ul>
+
+
+        <ul class="user-data-result semana-12 inactive">
+            <p class="semana-1  ">Semana 12</p>
+            <li class="user-data-result-carb">
+                <p class="user-data-result-carb-txt">Carboidratos</p>
+                <p class="user-data-result-carb-value" id="semana-12-carb"></p>
+            </li>
+
+            <li class="user-data-result-protein">
+                <p class="user-data-result-protein-txt">Proteína</p>
+                <p class="user-data-result-protein-value" id="semana-12-prot"></p>
+            </li>
+
+            <li class="user-data-result-fat">
+                <p class="user-data-result-fat-txt">Gordura</p>
+                <p class="user-data-result-fat-value" id="semana-12-fat"></p>
+            </li>
+
+            <li class="user-data-result-tot">
+                <p class="user-data-result-tot">Total de calorias</p>
+                <p class="user-data-result-tot-value" id="semana-12-kcal"></p>
+            </li>
+
+        </ul>
+
+        <br>
+        <br>
+        <br>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
