@@ -1,7 +1,6 @@
 {
   "name": "calculator",
   "version": "1.0.0",
-  "description": "",
   "main": "gulpfile.js",
   "dependencies": {
     "browser-sync": "^2.26.7",
@@ -21,5 +20,14 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wiliamtaesunglee/calculadora-macros.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wiliamtaesunglee/calculadora-macros/issues"
+  },
+  "homepage": "https://github.com/wiliamtaesunglee/calculadora-macros#readme",
+  "description": ""
 }
